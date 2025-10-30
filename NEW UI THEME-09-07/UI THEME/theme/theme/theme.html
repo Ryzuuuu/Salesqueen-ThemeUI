@@ -136,9 +136,11 @@
                             <span class="su_button_circle">
                             </span>
                             <button type="button" class="hrbtns contractbtn addbttn"
-                                onclick="showModal('modal.html','Add Order')"> <span class="button_text_container">
-                                    <i class="fa fa-plus"></i> NEW QUOTATION
-                                </span></button>
+    onclick="scrollToAddQuotation()"> 
+    <span class="button_text_container">
+        <i class="fa fa-plus"></i> NEW QUOTATION
+    </span>
+</button>
                         </div>
                 <div class="card-body">
                     <div class="row">
@@ -673,11 +675,280 @@
 
             </div>
         </div>
+        
+        <div class="page-wrapper">
+
+    <header class="page-breadcrumb-header">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li><i class="fas fa-home"></i></li>
+                <li>SALES</li>
+                <li>QUOTATION</li>
+                <li class="active">NEW QUOTATION</li>
+            </ol>
+        </nav>
+    </header>
+
+    <div class="container" id="add-quotation-section">
+        <h1 class="page-title">Add New Quotation</h1>
+        
+        <form class="quotation-form">
+            <!-- First Row -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="required">Customer</label>
+                    <div class="input-with-button">
+                        <select class="form-control">
+                            <option>Select Customer</option>
+                        </select>
+                        <button type="button" class="add-button" style="background-color:rgb(37, 37, 156)">+</button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="required">Quotation Date</label>
+                    <input type="date" class="form-control" value="2025-10-28">
+                </div>
+                
+                <div class="form-row">
+    
+    <div class="address-section address-block">
+        <div class="address-header">
+            <i class="fa-solid fa-truck-fast address-icon"></i><br>
+            <label class="required" style="color:rgb(76, 76, 76)">Bill Address</label>
+        </div>
+        
+        <div class="address-field-row">
+            
+            <input type="text" id="billCompany" class="underline-input" placeholder="Company">
+        </div><br>
+        <div class="address-field-row">
+            
+            <input type="text" id="billStreet" class="underline-input"placeholder="Street">
+        </div><br>
+        <div class="address-field-row">
+            
+            <input type="text" id="billCity" class="underline-input" placeholder="City">
+        </div><br>
+        <div class="address-field-row">
+            
+            <input type="text" id="billZipcode" class="underline-input" placeholder="Zipcode">
+        </div>
+    </div>
+
+    <div class="address-section address-block">
+        <div class="address-header"><br>
+            <label class="required" style="color:rgb(76, 76, 76)">Ship Address</label>
+        </div>
+
+        <div class="address-field-row">
+            
+            <input type="text" id="shipCompany" class="underline-input"placeholder="Company">
+        </div><br>
+        <div class="address-field-row">
+            
+            <input type="text" id="shipStreet" class="underline-input"placeholder="Street"  >
+        </div><br>
+        <div class="address-field-row">
+            
+            <input type="text" id="shipCity" class="underline-input"placeholder="City" >
+        </div><br>
+        <div class="address-field-row">
+            
+            <input type="text" id="shipZipcode" class="underline-input"placeholder="Zipcode" >
+        </div>
+    </div>
+</div>
+                
+                <div class="form-group">
+                    <label>Discount Type</label>
+                    <select class="form-control">
+                        <option>Select Discount Type</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Second Row -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="required">Quotation Number #</label>
+                    <div class="quotation-number">
+                        <span class="prefix">QUOT-</span>
+                        <input type="text" class="form-control number-input" value="0120">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Status</label>
+                    <select class="form-control">
+                        <option>Select Status</option>
+                    </select>
+                </div>
+                
+                <div class="form-group-spacer"></div>
+                
+                <div class="form-group">
+                    <label>Tags <i class="fa-solid fa-tag"></i></label>
+                    <select class="form-control">
+                        <option>Select Tags</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Third Row -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label>To Attend Of:</label>
+                    <input type="text" class="form-control" placeholder="Enter To attend of:">
+                </div>
+                
+                <div class="form-group">
+                    <label>s_number</label>
+                    <input type="text" class="form-control" placeholder="Enter s_number">
+                </div>
+                
+                <div class="form-group wide">
+                    <label>Email Address</label>
+                    <input type="email" class="form-control" placeholder="Enter Email Address">
+                </div>
+            </div>
+            
+            <!-- Advanced Options -->
+            <div class="advanced-options" style="border: solid 1px rgb(46, 46, 123);">
+                <span>Advanced Options</span>
+                <button type="button" class="toggle-button">+</button>
+            </div>
+        </form>
+    </div>        
+        
+        <div class="items-section">
+            <div class="item-search-bar">
+             <div class="input-with-button">
+                <input type="text" placeholder="Search Item...">
+                <button type="button" style="border:none;">
+    <i class="fas fa-search"></i>
+</button>
+            </div>
+        </div>
+
+                <table class="items-table">
+
+                    <thead>
+                        <tr>
+                            <th class="col-number">#</th>
+                            <th class="col-items">Items</th>
+                            <th class="col-hsn">HSN / SAC <span class="info-icon">ⓘ</span></th>
+                            <th class="col-qty">Qty (Unit)</th>
+                            <th class="col-price">Unit Price (₹)</th>
+                            <th class="col-tax">Tax</th>
+                            <th class="col-amount">Net Amount (₹)</th>
+                            <th class="col-actions"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="row-number"></td>
+                            <td class="col-items-content">
+                                <input type="text" class="form-control" placeholder="Item Name"><br>
+                                <button type="button" class="upload-button-green-outline"><i class="fa-solid fa-upload"></i></button>
+                                <textarea class="form-control description-area" placeholder="Describe Here..." rows="2"></textarea>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="HSN / SAC">
+                            </td>
+                            <td>
+                                <input type="number" class="form-control" value="1" min="0">
+                                <select class="form-control unit-select">
+                                    <option>Nothing selected</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="Rate">
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option>No Tax</option>
+                                </select>
+                            </td>
+                            <td class="amount-cell">
+                                
+                            </td>
+                            <td class="actions-cell">
+                                <button type="button" class="check-button">✓</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Summary Section -->
+            <div class="summary-section">
+                <div class="summary-row">
+                    <label>Sub Total :</label>
+                    <span class="amount">₹ 0.00</span>
+                </div>
+                <div class="summary-row">
+                    <label>Discount :</label>
+                    <div class="discount-input">
+                        <input type="number" class="form-control small-input" value="0.0" step="0.1">
+                        <select class="form-control percentage-select">
+                            <option>% (percentage)</option>
+                        </select>
+                    </div>
+                    <span class="amount">-0.00</span>
+                </div>
+                <div class="summary-row">
+                    <label>Total Tax :</label>
+                    <span class="amount">+0.00</span>
+                </div>
+                <div class="summary-row">
+                    <label>Adjustment :</label>
+                    <input type="number" class="form-control small-input" value="0.00" step="0.01">
+                    <span class="amount">0.00</span>
+                </div>
+                <div class="summary-row">
+                    <label>Shipping Charges :</label>
+                    <div class="shipping-input">
+                        <input type="number" class="form-control small-input" value="0.00" step="0.01">
+                        
+                    </div>
+                    <span class="amount">0.00</span>
+                </div>
+                <div class="add-shipping">
+                    <a href="#" class="add-link">Add Shipping Tax</a>
+                </div>
+                <div class="summary-row total-row">
+                    <label>Total :</label>
+                    <span class="amount">₹ 0.00</span>
+                </div>
+            </div>
+
+            <!-- Notes Section -->
+            <div class="notes-section">
+                <div class="note-column">
+                    <label>Customer Note</label>
+                    <textarea class="form-control note-textarea" placeholder="hi this is Erp software"></textarea>
+                </div>
+                <div class="note-column">
+                    <label>Terms & Conditions</label>
+                    <textarea class="form-control note-textarea" placeholder="Please Enter Terms And Conditions Here"></textarea><br>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+             
+            <div class="button-container">
+        <button class="btn-2 ">CLOSE</button>
+        <button class="btn-1 ">SAVE</button>
+    </div>
+            
+        </form>
+    </div> 
         <div class="card mt-3">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <h6>Buttons</h6><br>
+                        <h6>Buttons</h6>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="ctrfilter editbttn toggle-items">
@@ -695,7 +966,7 @@
                                     </button>
                                 </div>
                             </div>
-                        </div><br><br>
+                        </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="checkbox">
@@ -3624,6 +3895,26 @@
             xhr.send(formData);
         }
     </script>
+    <script>
+function scrollToAddQuotation() {
+    const addQuotationSection = document.getElementById('add-quotation-section');
+    
+    if (addQuotationSection) {
+        addQuotationSection.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+        });
+        
+        // Optional: Add a brief highlight effect
+        addQuotationSection.style.transition = 'box-shadow 0.5s';
+        addQuotationSection.style.boxShadow = '0 0 20px rgba(74, 144, 226, 0.5)';
+        
+        setTimeout(() => {
+            addQuotationSection.style.boxShadow = '';
+        }, 1500);
+    }
+}
+</script>
 </body>
 
 </html>
