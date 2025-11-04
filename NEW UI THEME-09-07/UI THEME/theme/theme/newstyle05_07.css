@@ -1,6 +1,3 @@
-/* ===========================
-   RESET & BASE STYLES
-   =========================== */
 * {
   margin: 0;
   padding: 0;
@@ -16,9 +13,10 @@ body {
 }
 
 /* ===========================
-   CONTAINER & LAYOUT
-   =========================== */
-.container {
+           CONTAINER & LAYOUT
+           =========================== */
+.container,
+.page-wrapper {
   max-width: 1400px;
   margin: 0 auto;
   background-color: white;
@@ -28,14 +26,12 @@ body {
 }
 
 .page-wrapper {
-  max-width: 1400px;
-  margin: auto;
   padding: 20px;
 }
 
 /* ===========================
-   BREADCRUMB
-   =========================== */
+           BREADCRUMB
+           =========================== */
 .page-breadcrumb-header {
   display: flex;
   justify-content: flex-end;
@@ -48,6 +44,9 @@ body {
   padding: 0;
   margin: 0;
   font-size: 13px;
+  color: #666;
+  align-items: center;
+  gap: 8px;
 }
 
 .breadcrumb li {
@@ -72,9 +71,17 @@ body {
   font-weight: 500;
 }
 
+.breadcrumb i {
+  color: #4a5a8f;
+}
+
+.breadcrumb span {
+  color: #999;
+}
+
 /* ===========================
-   CARDS
-   =========================== */
+           CARDS
+           =========================== */
 .quotation-content-card {
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
@@ -84,8 +91,8 @@ body {
 }
 
 /* ===========================
-   FORM ELEMENTS
-   =========================== */
+           FORM ELEMENTS
+           =========================== */
 .page-title,
 .form-title {
   font-size: 20px;
@@ -106,7 +113,8 @@ body {
 }
 
 /* Form Grid Layout */
-.form-row {
+.form-row,
+.form-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
@@ -120,14 +128,16 @@ body {
   gap: 8px;
 }
 
-.form-group label {
+.form-group label,
+.purchaseinfo {
   font-size: 14px;
   color: #666;
   font-weight: 500;
 }
 
 .form-group label.required::before,
-label.required::before {
+label.required::before,
+.aster {
   content: "* ";
   color: #e74c3c;
 }
@@ -159,14 +169,30 @@ select.form-control {
   cursor: pointer;
 }
 
-textarea.form-control {
+textarea.form-control,
+.textdesc,
+.note-textarea,
+.item-description {
   min-height: 90px;
   resize: vertical;
 }
 
+.item-description {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 12px;
+  color: #999;
+  min-height: 60px;
+}
+
 /* Input Groups */
 .input-with-button,
-.input-group {
+.input-group,
+.discount-group,
+.discount-input,
+.discount-inputs {
   display: flex;
   gap: 10px;
 }
@@ -177,7 +203,8 @@ textarea.form-control {
 }
 
 /* Quotation Number Input */
-.quotation-number {
+.quotation-number,
+.quotation-number-wrapper {
   display: flex;
   align-items: center;
   border: 1px solid #ddd;
@@ -186,7 +213,8 @@ textarea.form-control {
 }
 
 .prefix,
-.input-group-text {
+.input-group-text,
+.quotation-prefix {
   padding: 10px 12px;
   background-color: #f8f9fa;
   border-right: 1px solid #ddd;
@@ -195,7 +223,8 @@ textarea.form-control {
   font-weight: 500;
 }
 
-.number-input {
+.number-input,
+.quotation-number-wrapper input {
   border: none;
   flex: 1;
   padding: 10px 12px;
@@ -206,10 +235,11 @@ textarea.form-control {
 }
 
 /* ===========================
-   BUTTONS
-   =========================== */
+           BUTTONS
+           =========================== */
 .add-button,
-.ctctgrnbtn {
+.ctctgrnbtn,
+.add-item-btn {
   width: 40px;
   height: 40px;
   background-color: #4a90e2;
@@ -224,13 +254,20 @@ textarea.form-control {
   transition: background-color 0.2s;
 }
 
+.add-item-btn {
+  background: #3a3a7b;
+  width: 36px;
+  height: 36px;
+}
+
 .add-button:hover {
   background-color: #357abd;
 }
 
 .hrbtns,
 .contractbtn,
-.addbttn {
+.addbttn,
+.btn {
   padding: 10px 20px;
   font-size: 14px;
   font-weight: 600;
@@ -240,62 +277,17 @@ textarea.form-control {
   transition: all 0.2s;
 }
 
-.upload-button-green-outline {
-  background-color: white;
-  color: green;
-  border: none;
-}
-
-.fa-tag {
-  color: black;
-  font-size: 10px; /* You can change the size */
-}
-body {
-  font-family: Arial, sans-serif;
-  padding: 40px;
-  background-color: #f5f5f5;
-}
-
-.button-container {
-  display: flex;
-  gap: 0;
-}
-
 .btn {
   padding: 10px 30px;
-  border: none;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  cursor: pointer;
   text-transform: uppercase;
-  transition: opacity 0.2s;
+  letter-spacing: 0.5px;
 }
 
 .btn:hover {
   opacity: 0.9;
 }
 
-.btn-close {
-  background-color: #c8c8c8;
-  color: #666;
-  border-radius: 4px 0 0 4px;
-}
-
-.btn-1 {
-  background-color: #00b89f;
-  color: white;
-  padding: 10px 30px;
-  border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  text-transform: uppercase;
-  margin-left: 10px;
-}
-
+.btn-close,
 .btn-2 {
   background-color: #c8c8c8;
   color: #666;
@@ -309,36 +301,37 @@ body {
   text-transform: uppercase;
 }
 
-.button-container {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-}
-
-.btn-close:hover {
-  background-color: #5a6268;
-}
-
+.btn-1,
 .btn-save {
-  background-color: #17c2bb;
+  background-color: #00b89f;
   color: white;
-  padding: 12px 30px;
+  padding: 10px 30px;
   border: none;
   border-radius: 4px;
   font-size: 14px;
   font-weight: 600;
+  letter-spacing: 0.5px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  text-transform: uppercase;
+  margin-left: 10px;
 }
 
 .btn-save:hover {
   background-color: #13a69f;
 }
 
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
 /* Icon Buttons */
 .editpenbtn,
 .eyebtn,
-.closexbtn {
+.closexbtn,
+.check-button,
+.check-btn {
   padding: 8px 12px;
   background-color: #f8f9fa;
   border: 1px solid #ddd;
@@ -347,13 +340,45 @@ body {
   transition: all 0.2s;
 }
 
+.check-button,
+.check-btn {
+  width: 32px;
+  height: 32px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.check-button:hover,
+.check-btn:hover {
+  background-color: #218838;
+}
+
 .editpenbtn:hover {
   background-color: #e9ecef;
 }
 
+.upload-button-green-outline,
+.upload-btn {
+  background-color: white;
+  color: green;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 11px;
+  align-self: flex-start;
+}
+
 /* ===========================
-   ADDRESS SECTION
-   =========================== */
+           ADDRESS SECTION
+           =========================== */
 .address-section {
   grid-column: span 1;
   position: relative;
@@ -409,8 +434,8 @@ body {
 }
 
 /* ===========================
-   ADVANCED OPTIONS
-   =========================== */
+           ADVANCED OPTIONS
+           =========================== */
 .advanced-options {
   display: flex;
   align-items: center;
@@ -420,6 +445,7 @@ body {
   border-radius: 4px;
   margin-top: 10px;
   cursor: pointer;
+  border: 1px solid #3a3a7b;
 }
 
 .advanced-options span {
@@ -428,7 +454,8 @@ body {
   color: #333;
 }
 
-.toggle-button {
+.toggle-button,
+.advanced-options button {
   width: 32px;
   height: 32px;
   background-color: #5b6a8e;
@@ -443,17 +470,59 @@ body {
   transition: background-color 0.2s;
 }
 
+.advanced-options button {
+  background: #3a3a7b;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+}
+
 .toggle-button:hover {
   background-color: #4a5573;
 }
 
 /* ===========================
-   ITEMS TABLE
-   =========================== */
-.item-search-bar {
+           ITEMS TABLE
+           =========================== */
+.item-search-bar,
+.search-section {
   padding: 20px 25px;
   background-color: #fff;
   border-bottom: 1px solid #e0e0e0;
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.search-wrapper {
+  position: relative;
+  flex: 1;
+  max-width: 300px;
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 8px 35px 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.search-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M11.5 10.5l-2.9-2.9c.6-.7.9-1.6.9-2.6 0-2.2-1.8-4-4-4s-4 1.8-4 4 1.8 4 4 4c1 0 1.9-.3 2.6-.9l2.9 2.9.5-.5zM5.5 8.5c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
 }
 
 .items-section,
@@ -468,10 +537,13 @@ body {
   width: 100%;
   border-collapse: collapse;
   background-color: white;
+  font-size: 12px;
+  margin-bottom: 30px;
 }
 
 .items-table thead {
   background-color: #f8f9fa;
+  z-index: 1;
 }
 
 .items-table th {
@@ -483,11 +555,20 @@ body {
   border: 1px solid #e0e0e0;
 }
 
+.items-table th:first-child {
+  width: 40px;
+  text-align: center;
+}
+
 .items-table td {
   padding: 12px;
   border: 1px solid #e0e0e0;
   vertical-align: top;
   font-size: 14px;
+}
+
+.items-table tbody tr:hover {
+  background-color: #f5f5f5;
 }
 
 /* Column Widths */
@@ -518,7 +599,9 @@ body {
 
 .items-table td input,
 .items-table td select,
-.items-table td textarea {
+.items-table td textarea,
+.small-input,
+.item-name-input {
   width: 100%;
   padding: 8px;
   border: 1px solid #d9d9d9;
@@ -527,10 +610,31 @@ body {
   box-sizing: border-box;
 }
 
+.small-input,
+.item-name-input {
+  padding: 6px 8px;
+  font-size: 12px;
+}
+
 .items-table td textarea {
   min-height: 60px;
   resize: none;
   margin-top: 5px;
+}
+
+.unit-select {
+  margin-top: 8px;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 12px;
+  width: 100%;
+}
+
+.item-name-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .amount-cell {
@@ -543,29 +647,9 @@ body {
   text-align: center;
 }
 
-.check-button {
-  width: 32px;
-  height: 32px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  font-size: 16px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.2s;
-  margin: 0 auto;
-}
-
-.check-button:hover {
-  background-color: #218838;
-}
-
 /* ===========================
-   SUMMARY SECTION
-   =========================== */
+           SUMMARY SECTION
+           =========================== */
 .summary-notes-section,
 .summary-section {
   padding: 25px;
@@ -620,6 +704,8 @@ body {
   border-top: 2px solid #ddd;
   padding-top: 15px;
   margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .total-row label,
@@ -629,40 +715,54 @@ body {
   color: #333;
 }
 
-.small-input {
+.discount-group input,
+.discount-input input,
+.discount-inputs input,
+.adjustment-input {
   width: 80px;
-  padding: 6px 10px;
-  font-size: 13px;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 12px;
 }
 
-.discount-group,
-.discount-input {
-  display: flex;
-  gap: 10px;
+.adjustment-input {
+  width: 100px;
+}
+
+.discount-group {
   width: 150px;
 }
 
 .discount-group input {
   width: 50%;
-  border: 1px solid #d9d9d9;
-  padding: 8px;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
+  padding: 8px;
 }
 
-.discount-group select {
+.discount-group select,
+.discount-inputs select {
   width: 50%;
   border: 1px solid #d9d9d9;
   border-left: none;
   padding: 8px;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
+  font-size: 12px;
+}
+
+.add-link {
+  color: #4a90e2;
+  text-decoration: none;
+  font-size: 12px;
 }
 
 /* ===========================
-   NOTES SECTION
-   =========================== */
-.notes-section {
+           NOTES SECTION
+           =========================== */
+.notes-section,
+.notes-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
@@ -670,30 +770,32 @@ body {
   flex-grow: 1;
 }
 
-.note-column {
+.notes-grid {
+  margin-bottom: 30px;
+}
+
+.note-column,
+.note-group {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.note-column label {
+.note-column label,
+.note-group label {
   font-size: 14px;
   font-weight: 600;
   color: #333;
-}
-
-.note-textarea {
-  min-height: 100px;
-  resize: vertical;
-  font-size: 14px;
+  display: block;
+  margin-bottom: 8px;
 }
 
 /* ===========================
-   ACTION BUTTONS
-   =========================== */
+           ACTION BUTTONS
+           =========================== */
 .form-actions-footer,
 .action-buttons {
-  padding: 20px 25px 20px 25px;
+  padding: 20px 25px;
   background-color: #ffffff;
   border-top: 1px solid #e0e0e0;
   display: flex;
@@ -703,8 +805,8 @@ body {
 }
 
 /* ===========================
-   TABS
-   =========================== */
+           TABS
+           =========================== */
 .scroll-images {
   display: flex;
   gap: 10px;
@@ -744,8 +846,8 @@ body {
 }
 
 /* ===========================
-   DATATABLE
-   =========================== */
+           DATATABLE
+           =========================== */
 .display {
   width: 100% !important;
 }
@@ -765,9 +867,66 @@ table.dataTable thead th {
 }
 
 /* ===========================
-   TAGS & BADGES
-   =========================== */
-.tag {
+           HOVER ICONS & TABLE ACTIONS
+           =========================== */
+.customer-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hover-icons {
+  display: none;
+  gap: 4px;
+}
+
+tbody tr:hover .hover-icons {
+  display: flex;
+}
+
+.icon-btn {
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+  padding: 0;
+  background-color: transparent;
+}
+
+.icon-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-view:hover {
+  background-color: #e3f2fd;
+}
+.icon-view svg {
+  stroke: #2196f3;
+}
+.icon-edit:hover {
+  background-color: #e8f5e9;
+}
+.icon-edit svg {
+  stroke: #4caf50;
+}
+.icon-copy:hover {
+  background-color: #f3e5f5;
+}
+.icon-copy svg {
+  stroke: #9c27b0;
+}
+
+/* ===========================
+           TAGS & BADGES
+           =========================== */
+.tag,
+.tags {
   display: inline-block;
   padding: 4px 8px;
   margin: 2px;
@@ -778,25 +937,39 @@ table.dataTable thead th {
   border: 1px solid #dee2e6;
 }
 
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 0;
+}
+
+.tag.accepted,
 .approvedbtn {
+  background-color: transparent;
+  border: 1px solid #ffa07a;
   color: #ffa07a !important;
-  border: 1px solid #ffa07a !important;
-  background-color: transparent !important;
+}
+
+.expiry-date {
+  color: #dc3545;
+}
+
+.rowformation {
+  display: flex;
+  gap: 20px;
 }
 
 /* ===========================
-   UTILITIES
-   =========================== */
-.graycolor {
+           UTILITIES
+           =========================== */
+.graycolor,
+.text-muted {
   color: #6c757d !important;
 }
 
 .text-danger {
   color: #dc3545;
-}
-
-.text-muted {
-  color: #6c757d;
 }
 
 .isvg {
@@ -810,11 +983,34 @@ table.dataTable thead th {
   margin: 20px 0;
 }
 
+.fa-tag {
+  color: black;
+  font-size: 10px;
+}
+
+.info-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: #999;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 10px;
+  line-height: 14px;
+  margin-left: 4px;
+}
+
+#sec_col {
+  display: none;
+}
+
 /* ===========================
-   RESPONSIVE DESIGN
-   =========================== */
+           RESPONSIVE DESIGN
+           =========================== */
 @media (max-width: 1200px) {
-  .form-row {
+  .form-row,
+  .form-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -822,13 +1018,15 @@ table.dataTable thead th {
     grid-column: span 2;
   }
 
-  .notes-section {
+  .notes-section,
+  .notes-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .form-row {
+  .form-row,
+  .form-grid {
     grid-template-columns: 1fr;
   }
 
@@ -848,7 +1046,8 @@ table.dataTable thead th {
     max-width: 100%;
   }
 
-  .action-buttons {
+  .action-buttons,
+  .button-container {
     flex-direction: column;
   }
 
@@ -857,6 +1056,844 @@ table.dataTable thead th {
     width: 100%;
   }
 }
-#sec_col {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 20px;
+  color: #333;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.main-content-wrapper {
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+.table-section {
+  flex: 1;
+  transition: all 0.3s ease;
+  padding: 30px;
+}
+
+.table-section.shrunk {
+  flex: 0 0 45%;
+}
+
+.view-panel {
+  flex: 0 0 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background-color: #fff;
+  border-left: 1px solid #e0e0e0;
+  position: relative;
+}
+
+.view-panel.active {
+  flex: 0 0 55%;
+}
+
+.view-panel-content {
+  padding: 30px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Button */
+.button_su {
+  margin-bottom: 20px;
+}
+
+.addbttn {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.addbttn:hover {
+  background-color: #357abd;
+}
+
+/* Filters */
+.table-header-controls {
+  margin-bottom: 20px;
+}
+
+.filters-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-item label {
+  font-size: 0.8em;
+  color: #555;
+  margin-bottom: 3px;
+}
+
+.filter-item input,
+.filter-item select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 150px;
+}
+
+.excel-button {
+  background-color: #198754;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  align-self: flex-end;
+}
+
+.excel-button:hover {
+  background-color: #157347;
+}
+
+/* Summary Cards */
+.summary-cards-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.summary-card {
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.summary-card span {
+  font-size: 0.9em;
+}
+
+.summary-card strong {
+  font-size: 1.1em;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background-color: #f8f9fa;
+}
+
+th {
+  padding: 12px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  border: 1px solid #e0e0e0;
+}
+
+td {
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+}
+
+.row-hover {
+  transition: background-color 0.2s;
+}
+
+.row-hover:hover {
+  background-color: #f5f5f5;
+}
+
+.row-hover:hover .hover-icons {
+  display: flex;
+}
+
+.hover-icons {
   display: none;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.icon-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+  padding: 0;
+  background-color: transparent;
+}
+
+.icon-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.icon-view:hover {
+  background-color: #e3f2fd;
+}
+
+.icon-view svg {
+  stroke: #2196f3;
+}
+
+.icon-edit:hover {
+  background-color: #e8f5e9;
+}
+
+.icon-edit svg {
+  stroke: #4caf50;
+}
+
+.icon-copy:hover {
+  background-color: #f3e5f5;
+}
+
+.icon-copy svg {
+  stroke: #9c27b0;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  margin: 2px;
+  border-radius: 4px;
+  font-size: 12px;
+  background-color: #e9ecef;
+  color: #495057;
+  border: 1px solid #dee2e6;
+}
+
+.approvedbtn {
+  color: #ffa07a !important;
+  border: 1px solid #ffa07a !important;
+  background-color: transparent !important;
+}
+
+/* View Panel Styles */
+.close-panel-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.close-panel-btn:hover {
+  background-color: #e9ecef;
+}
+
+.quotation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.quotation-status {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 2px solid #dc3545;
+  color: #dc3545;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.action-buttons-right {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.action-btn:hover {
+  background-color: #357abd;
+}
+
+.quotation-id {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.company-logo {
+  width: 60px;
+  height: 60px;
+  background-color: #000;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-info {
+  margin-bottom: 30px;
+}
+
+.company-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.company-info p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.dates-info {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+  font-size: 13px;
+}
+
+.dates-info div {
+  color: #666;
+}
+
+.dates-info strong {
+  color: #333;
+}
+
+.items-table-view {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
+}
+
+.items-table-view th {
+  background-color: #f8f9fa;
+  padding: 12px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid #e0e0e0;
+}
+
+.items-table-view td {
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  font-size: 13px;
+}
+
+.summary-section-view {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.summary-row.total {
+  border-top: 2px solid #333;
+  margin-top: 10px;
+  padding-top: 15px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.client-note {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.client-note strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+@media (max-width: 1200px) {
+  .table-section.shrunk {
+    flex: 0 0 100%;
+  }
+
+  .view-panel.active {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    flex: 0 0 100%;
+  }
+}
+.view-container {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  width: 100%;
+  transition: width 260ms ease-in-out;
+}
+.view-main {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+  transition: width 260ms ease-in-out;
+}
+/* Ensure table fills available space */
+.view-main .dataTables_wrapper,
+.view-main .table-responsive {
+  width: 100% !important;
+  transition: width 260ms ease-in-out;
+}
+.view-main table.dataTable {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+/* When panel is open shrink the main area */
+.view-container.panel-open {
+  width: calc(100% - 520px);
+}
+.view-container.panel-open .view-main {
+  width: calc(100% - 520px);
+}
+/* Small screens: overlay the panel */
+@media (max-width: 900px) {
+  .view-container.panel-open {
+    width: 100%;
+  }
+  .view-container.panel-open .view-main {
+    width: 100%;
+    opacity: 0.6;
+  }
+}
+
+/* Maintain button styles */
+.button_su {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.hrbtns.contractbtn {
+  transition: all 260ms ease-in-out;
+  width: auto;
+}
+
+.side-view-panel {
+  width: 520px;
+  max-width: 48%;
+  background: #fff;
+  border-left: 1px solid #e6e6e6;
+  box-shadow: -6px 8px 30px rgba(0, 0, 0, 0.08);
+  transform: translateX(120%);
+  transition: transform 260ms ease-in-out;
+  will-change: transform;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: -20px;
+  top: 0;
+  height: 100%;
+  z-index: 1050;
+}
+.side-view-panel.open {
+  transform: translateX(0);
+}
+/* When panel is open shrink the main area */
+.view-container.panel-open {
+  width: 100%;
+  position: relative;
+}
+.view-container.panel-open .view-main {
+  width: calc(100% - 520px);
+  transition: all 260ms ease-in-out;
+}
+.view-container.panel-open .content-wrapper {
+  width: 100%;
+  transition: all 260ms ease-in-out;
+}
+/* Ensure all content inside content-wrapper resizes proportionally */
+.view-container.panel-open .content-wrapper .card,
+.view-container.panel-open .content-wrapper .button_su,
+.view-container.panel-open .content-wrapper .hrbtns,
+.view-container.panel-open .content-wrapper .table-responsive,
+.view-container.panel-open .content-wrapper .table-header-controls {
+  width: 100%;
+  max-width: 100%;
+  transition: all 260ms ease-in-out;
+}
+
+/* Maintain spacing and alignment */
+.content-wrapper .table-header-controls {
+  margin-bottom: 20px;
+  transition: all 260ms ease-in-out;
+}
+.content-wrapper .filters-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+/* Small screens: overlay the panel */
+@media (max-width: 900px) {
+  .view-container.panel-open {
+    width: 100%;
+  }
+  .view-container.panel-open .view-main {
+    width: 100%;
+    opacity: 0.6;
+  }
+  .side-view-panel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    z-index: 1050;
+    width: min(520px, 100%);
+  }
+}
+
+/* Header tabs and toolbar (styled to match preview) */
+.side-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eef2f6;
+  background: #fff;
+}
+.side-tabs {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.side-tab {
+  padding: 6px 10px;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  background: transparent;
+  color: #334155;
+  font-weight: 700;
+  font-size: 0.85rem; /* slightly smaller */
+}
+.side-tab.active {
+  background: #fff;
+  border-bottom: 3px solid #2b6fb5; /* blue underline like the preview */
+  color: #1f4e8a;
+}
+.side-toolbar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.side-toolbar .btn {
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+}
+.side-toolbar .btn.btn-sm {
+  font-size: 0.78rem;
+  padding: 5px 8px;
+}
+
+/* Side content area */
+.side-content {
+  padding: 18px;
+  overflow: auto;
+}
+
+/* Invoice-like card (preview) */
+.preview-card {
+  background: #fff;
+  border: 1px solid #eef2f6;
+  border-radius: 8px;
+  padding: 20px 22px;
+  box-shadow: 0 1px 4px rgba(16, 24, 40, 0.04);
+}
+.preview-card-header .badge-draft {
+  margin-right: auto;
+}
+.preview-header-actions .btn {
+  min-width: 68px;
+  font-size: 0.78rem;
+  padding: 6px 8px;
+}
+.badge-draft {
+  display: inline-block;
+  color: #c0392b;
+  border: 1px solid #f5c6c3;
+  background: #fff5f5;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 0.82rem;
+}
+.preview-qt {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+.preview-company {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+/* stack logo above details but keep everything left-aligned under the QT number */
+.preview-company.logo-top {
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 4px;
+}
+.preview-company.logo-top .preview-company-details {
+  margin-top: 4px;
+}
+.preview-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+.preview-company-details {
+  font-size: 0.85rem;
+  color: #334155;
+  line-height: 1.25;
+}
+
+.preview-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+.preview-table th,
+.preview-table td {
+  border: 1px solid #f1f5f9;
+  padding: 8px;
+  text-align: left;
+  font-size: 0.82rem;
+}
+
+.totals-box {
+  float: right;
+  width: 200px;
+  margin-top: 8px;
+  border: 1px solid #eef2f6;
+  background: #fbfbfd;
+}
+.totals-box .row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-bottom: 1px solid #eef2f6;
+}
+.totals-box .row strong {
+  font-size: 1rem;
+}
+
+.client-note {
+  margin-top: 18px;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+/* Floating vertical action buttons (inside panel) — match preview small white rounded icons */
+.floating-actions {
+  position: absolute;
+  right: 14px;
+  top: 92px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 1060;
+}
+.floating-actions i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 6px 14px rgba(2, 6, 23, 0.06);
+  color: #2b6fb5;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+/* Make sure body area has spacing to account for floating actions */
+.side-view-panel .side-content {
+  padding-right: 72px;
+}
+
+/* small tweaks */
+.side-view-close {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* Hide DataTables responsive expand/collapse control plus signs */
+table.dataTable tbody td.control,
+table.dataTable tbody td.dtr-control,
+table.dataTable tbody td.rs-control {
+  display: none !important;
+}
+
+/* Some themes inject a ::before with a plus sign - hide it */
+table.dataTable tbody td.control::before,
+table.dataTable tbody td.dtr-control::before,
+table.collapsed tbody td:first-child::before {
+  display: none !important;
+}
+
+/* If icons are added via a child button with plus text, target them */
+table.dataTable tbody td .dtr-toggle,
+table.dataTable tbody td .control-toggle {
+  display: none !important;
+}
+
+/* When the view panel is active (container has .panel-open) make the main area shrink to leave space for the panel */
+.view-container.panel-open .view-main {
+  width: calc(100% - 520px) !important;
+  transition: width 260ms ease-in-out;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Make internal controls (buttons, header controls, DataTables wrapper and responsive container) fill the available space */
+.view-container.panel-open .view-main .button_su,
+.view-container.panel-open .view-main .hrbtns,
+.view-container.panel-open .view-main .table-header-controls,
+.view-container.panel-open .view-main .table-section,
+.view-container.panel-open .view-main .table-responsive,
+.view-container.panel-open .view-main .dataTables_wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+  transition: width 260ms ease-in-out;
+  box-sizing: border-box;
+}
+
+/* Ensure buttons wrap and scale down as needed while keeping original appearance */
+.view-main .button_su {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+.view-main .button_su .hrbtns {
+  white-space: nowrap;
+}
+
+/* Make table use fixed layout so columns reflow predictably when container shrinks */
+.view-main .table-responsive table.dataTable {
+  table-layout: fixed;
+}
+
+/* Small-screen behavior: panel overlays, main stays full width */
+@media (max-width: 900px) {
+  .view-container.panel-open .view-main {
+    width: 100% !important;
+  }
+}
+
+/* High-specificity helpers to ensure the main area consumes remaining space
+                         when the side panel opens. These rules are intentionally specific and
+                         use !important to override theme styles while keeping original design. */
+#viewContainer.panel-open .view-main {
+  width: calc(100% - 520px) !important;
+  max-width: calc(100% - 520px) !important;
+  box-sizing: border-box !important;
+  transition: width 260ms ease-in-out !important;
+}
+#viewContainer.panel-open .view-main * {
+  box-sizing: border-box !important;
+}
+
+#viewContainer.panel-open .view-main .dataTables_wrapper,
+#viewContainer.panel-open .view-main .table-responsive {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+#viewContainer.panel-open .view-main .button_su,
+#viewContainer.panel-open .view-main .hrbtns {
+  max-width: 100% !important;
+  overflow: hidden !important;
 }
