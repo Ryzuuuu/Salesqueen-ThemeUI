@@ -69,8 +69,7 @@
     <script src="../../assets/js/dataTables.dateTime.min.js"></script>
     <!-- <script src="../../assets/js/moment.min.js"></script> -->
 
-    <!-- Include Required Prerequisites -->
-    <!-- <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script> -->
+
     <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" /> -->
 
@@ -83,22 +82,13 @@
     <link rel="stylesheet" href="warehousestyle.css">
     <link rel="stylesheet" href="../../assets/css/style.css" />
 
-
+       
 </head>
 
 
 <body>
     <div class="container-fluid">
-        <!-- <div id="sidebarRight">
-            <span>Quick Preview</span>
-            <span class="close-btn"><svg class="close-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                    <path
-                        d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"
-                        fill="currentColor"></path>
-                </svg></span>
-
-        </div> -->
+       
         <div class="toggle-section">
             <div id="rightSliderToggle" data-bs-toggle="tooltip" data-bs-title="Quick Preview"
                 data-bs-auto-close="outside"></div>
@@ -118,34 +108,45 @@
 
             </div>
         </div>
-        <!-- <div class="hamburger hamburger--elastic" id="hamburger">
-            <div class="hamburger-box">
-                <div class="hamburger-inner"></div>
-            </div>
-        </div> -->
+        
+        <header class="page-breadcrumb-header">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li><i class="fas fa-home"></i></li>
+                <li>SALES</li>
+                <li class="active">QUOTATION</li>
+                
+            </ol>
+        </nav>
+    </header>
 
         <div class="sidebar close  close5">
             <div class="scrollbox">
                 <h2 class="demo-title">Demo Sidebar</h2>
             </div>
         </div>
-
-                <div class="row">
+        
+         <div class="row">
             <div class=" card col-md-12 me-3" id="first_col">
                 <div class="button_su">
                             <span class="su_button_circle">
                             </span>
                             <button type="button" class="hrbtns contractbtn addbttn"
-    onclick="scrollToAddQuotation()"> 
-    <span class="button_text_container">
-        <i class="fa fa-plus"></i> NEW QUOTATION
-    </span>
-</button>
+                                onclick="scrollToAddQuotation()"> 
+                                <span class="button_text_container">
+                                    <i class="fa fa-plus"></i> NEW QUOTATION
+                                </span>
+                            </button>
                         </div>
+
+
+            <div class="rowformation">       
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12" id="first_col">
-                            <div class="demo-html mt-0">
+                            <div class="view-container" id="viewContainer">
+                                <div class="view-main">
+                                    <div class="demo-html mt-0">
                                 
 
 <div class="table-header-controls" style="margin-bottom: 20px;">
@@ -188,8 +189,7 @@
     </div>
 
 </div>
-                                <table
-                                    class="example display dataTable display responsive nowrap tblalign table borderless"
+                                <table class="example display dataTable display responsive nowrap tblalign table borderless"
                                      id="example" aria-describedby="example_info">
                                     
                                 <thead class="theadrow">
@@ -204,9 +204,26 @@
         <th>Tags</th>
     </tr>
 </thead>
-                            <tbody>
+<tbody>
     <tr class="row-hover">
-        <td>Kia</td>
+        <td>Kia<div class="hover-icons">
+                                <button class="icon-btn icon-view" title="View" onclick="showDetail('${q.id}')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </button>
+                                <button class="icon-btn icon-edit" title="Edit (Button Tag)" onclick="document.getElementById('edition').scrollIntoView({ behavior: 'smooth' });">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+            </button>
+                                <button class="icon-btn icon-copy" title="Copy">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+                                    </svg>
+                                </button>
+                            </div></td>
         <td>QT-0013</td>
         <td>200</td>
         <td>10</td>
@@ -215,7 +232,24 @@
         <td style="color: red;">17/10/2025</td>
         <td></td> </tr>
     <tr class="row-hover">
-        <td>Kia</td>
+        <td>Kia<div class="hover-icons">
+                                <button class="icon-btn icon-view" title="View" onclick="showDetail('QT-0013')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </button>
+                                <button class="icon-btn icon-edit" title="Edit (Button Tag)" onclick="document.getElementById('edition').scrollIntoView({ behavior: 'smooth' });">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+            </button>
+                                <button class="icon-btn icon-copy" title="Copy">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+                                    </svg>
+                                </button>
+                            </div></td>
         <td>QT-0012</td>
         <td>1000</td>
         <td>0</td>
@@ -227,7 +261,24 @@
         </td>
     </tr>
     <tr class="row-hover">
-        <td>Gennie</td>
+        <td>Gennie<div class="hover-icons">
+                                <button class="icon-btn icon-view" title="View" onclick="showDetail('QT-0013')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </button>
+                                <button class="icon-btn icon-edit" title="Edit (Button Tag)" onclick="document.getElementById('edition').scrollIntoView({ behavior: 'smooth' });">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+            </button>
+                                <button class="icon-btn icon-copy" title="Copy">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+                                    </svg>
+                                </button>
+                            </div></td>
         <td>QT-0011</td>
         <td>2000</td>
         <td>95</td>
@@ -235,12 +286,29 @@
         <td>12/09/2025</td>
         <td style="color: red;">19/09/2025</td>
         <td>
-             <span class="tag">Joy</span> <span class="tag">Invoiced - INV-0009</span>
+             <span class="tag">Jay</span> <span class="tag">Invoiced - INV-0009</span>
              <span class="tag approvedbtn" style="color: #FFA07A !important; border: 1px solid #FFA07A !important; background-color: transparent !important;">Accepted</span>
         </td>
     </tr>
     <tr class="row-hover">
-        <td>Loyal</td>
+        <td>Loyal<div class="hover-icons">
+                                <button class="icon-btn icon-view" title="View" onclick="showDetail('QT-0013')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </button>
+                                <button class="icon-btn icon-edit" title="Edit (Button Tag)" onclick="document.getElementById('edition').scrollIntoView({ behavior: 'smooth' });">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+            </button>
+                                <button class="icon-btn icon-copy" title="Copy">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+                                    </svg>
+                                </button>
+                            </div></td>
         <td>QT-0010</td>
         <td>20</td>
         <td>0</td>
@@ -248,13 +316,30 @@
         <td>11/09/2025</td>
         <td style="color: red;">18/09/2025</td>
         <td>
-            <span class="tag">Hovy</span>
+            <span class="tag">Havy</span>
             <span class="tag">Invoiced - INV-0010</span>
             <span class="tag approvedbtn" style="color: #FFA07A !important; border: 1px solid #FFA07A !important; background-color: transparent !important;">Accepted</span>
        </td>
     </tr>
     <tr class="row-hover">
-        <td>Unlimited</td>
+        <td>Unlimited<div class="hover-icons">
+                                <button class="icon-btn icon-view" title="View" onclick="showDetail('QT-0013')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </button>
+                                <button class="icon-btn icon-edit" title="Edit (Button Tag)" onclick="document.getElementById('edition').scrollIntoView({ behavior: 'smooth' });">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+            </button>
+                                <button class="icon-btn icon-copy" title="Copy">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+                                    </svg>
+                                </button>
+                            </div></td>
         <td>QT-0009</td>
         <td>10</td>
         <td>0</td>
@@ -263,7 +348,24 @@
         <td style="color: red;">18/09/2025</td>
         <td></td> </tr>
      <tr class="row-hover">
-        <td>Loyal</td>
+        <td>Loyal<div class="hover-icons">
+                                <button class="icon-btn icon-view" title="View" onclick="showDetail('QT-0013')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </button>
+                                <button class="icon-btn icon-edit" title="Edit (Button Tag)" onclick="document.getElementById('edition').scrollIntoView({ behavior: 'smooth' });">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+            </button>
+                                <button class="icon-btn icon-copy" title="Copy">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+                                    </svg>
+                                </button>
+                            </div></td>
         <td>QT-0008</td>
         <td>20</td>
         <td>0</td>
@@ -272,7 +374,24 @@
         <td style="color: red;">18/09/2025</td>
         <td></td> </tr>
     <tr class="row-hover">
-        <td>Loyal</td>
+        <td>Loyal<div class="hover-icons">
+                                <button class="icon-btn icon-view" title="View" onclick="showDetail('QT-0013')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </button>
+                                <button class="icon-btn icon-edit" title="Edit (Button Tag)" onclick="document.getElementById('edition').scrollIntoView({ behavior: 'smooth' });">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+            </button>
+                                <button class="icon-btn icon-copy" title="Copy">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+                                    </svg>
+                                </button>
+                            </div></td>
         <td>QT-0007</td>
         <td>10</td>
         <td>0</td>
@@ -281,7 +400,24 @@
         <td style="color: red;">18/09/2025</td>
         <td></td> </tr>
      <tr class="row-hover">
-        <td>Loyal</td>
+        <td>Loyal<div class="hover-icons">
+                                <button class="icon-btn icon-view" title="View" onclick="showDetail('QT-0013')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </button>
+                                <button class="icon-btn icon-edit" title="Edit (Button Tag)" onclick="document.getElementById('edition').scrollIntoView({ behavior: 'smooth' });">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+            </button>
+                                <button class="icon-btn icon-copy" title="Copy">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+                                    </svg>
+                                </button>
+                            </div></td>
         <td>QT-0006</td>
         <td>10</td>
         <td>0</td>
@@ -290,32 +426,83 @@
         <td style="color: red;">18/09/2025</td>
         <td></td> </tr>
     <tr class="row-hover">
-        <td>Hyko Ltd</td> <td>QT-0005</td>
+        <td>Hyko Ltd<div class="hover-icons">
+                                <button class="icon-btn icon-view" title="View" onclick="showDetail('QT-0013')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </button>
+                                <button class="icon-btn icon-edit" title="Edit (Button Tag)" onclick="document.getElementById('edition').scrollIntoView({ behavior: 'smooth' });">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+            </button>
+                                <button class="icon-btn icon-copy" title="Copy">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+                                    </svg>
+                                </button>
+                            </div></td> <td>QT-0005</td>
         <td>28980</td> <td>1459</td>
         <td>30839</td> <td>20/06/2025</td>
         <td style="color: red;">15/09/2025</td>
          <td>
-            <span class="tag">Joy</span>
+            <span class="tag">Jay</span>
             <span class="tag">Invoiced - INV-0011</span>
             <span class="tag approvedbtn" style="color: #FFA07A !important; border: 1px solid #FFA07A !important; background-color: transparent !important;">Accepted</span>
         </td>
     </tr>
      <tr class="row-hover">
-        <td>Unlimited</td>
+        <td>Unlimited<div class="hover-icons">
+                                <button class="icon-btn icon-view" title="View" onclick="showDetail('QT-0013')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </button>
+                                <button class="icon-btn icon-edit" title="Edit (Button Tag)" onclick="document.getElementById('edition').scrollIntoView({ behavior: 'smooth' });">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+            </button>
+                                <button class="icon-btn icon-copy" title="Copy">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+                                    </svg>
+                                </button>
+                            </div></td>
         <td>QT-0003</td>
         <td>10000</td>
         <td>1800</td>
         <td>12000</td> <td>08/09/2025</td> <td style="color: red;">15/09/2025</td>
         <td>
             <span class="tag">Deal</span>
-            <span class="tag">Joy</span>
-            <span class="tag">Haypibo Pvt Limited</span>
+            <span class="tag">Jay</span>
+            <span class="tag">Hepsiba Pvt Limited</span>
             <span class="tag">Invoiced - INV-0002</span>
             <span class="tag approvedbtn" style="color: #FFA07A !important; border: 1px solid #FFA07A !important; background-color: transparent !important;">Accepted</span>
         </td>
     </tr>
     <tr class="row-hover">
-        <td>Krishna Ltd</td>
+        <td>Krishna Ltd<div class="hover-icons">
+                                <button class="icon-btn icon-view" title="View" onclick="showDetail('QT-0013')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </button>
+                                <button class="icon-btn icon-edit" title="Edit (Button Tag)" onclick="document.getElementById('edition').scrollIntoView({ behavior: 'smooth' });">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+            </button>
+                                <button class="icon-btn icon-copy" title="Copy">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+                                    </svg>
+                                </button>
+                            </div></td>
         <td>QT-0002</td>
         <td>5000</td>
         <td>0</td>
@@ -323,19 +510,105 @@
         <td>08/09/2025</td> <td style="color: red;">15/09/2025</td>
         <td></td> </tr>
     <tr class="row-hover">
-        <td>Krishna Ltd</td>
+        <td>Krishna Ltd<div class="hover-icons">
+                                <button class="icon-btn icon-view" title="View" onclick="showDetail('QT-0013')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </button>
+                                <button class="icon-btn icon-edit" title="Edit (Button Tag)" onclick="document.getElementById('edition').scrollIntoView({ behavior: 'smooth' });">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+            </button>
+                                <button class="icon-btn icon-copy" title="Copy">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+                                    </svg>
+                                </button>
+                            </div></td>
         <td>QT-0001</td>
         <td>5000</td>
         <td>0</td>
         <td>5000</td>
         <td>19/08/2025</td> <td style="color: red;">26/08/2025</td> <td></td> </tr>
 </tbody>
-                                </table>
-                            </div>
-                        </div>
+                               </table>
+                                
+                                                        </div>
+                                                    </div> <!-- /.view-main -->
+                                                    <aside class="side-view-panel" id="sideView" aria-hidden="true">
+                                                        <div class="side-topbar">
+                                                            <div class="side-tabs">
+                                                                <div class="side-tab active" data-tab="preview">Preview</div>
+                                                                <div class="side-tab" data-tab="attachments">Attachments</div>
+                                                            </div>
+                                                            <!-- keep close button in topbar -->
+                                                            <div>
+                                                                <button class="side-view-close" id="sideClose" aria-label="Close">&times;</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="side-content">
+                                                            <div class="preview-card" id="sideViewBody">
+                                                                <div class="preview-card-header" style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                                                                    <div class="badge-draft">DRAFT</div>
+                                                                    <!-- Convert/More sit on the far right of same line as DRAFT -->
+                                                                    <div class="preview-header-actions" style="display:flex;gap:8px;align-items:center;">
+                                                                        <div class="btn btn-sm btn-primary">Convert <i class="bi bi-caret-down-fill"></i></div>
+                                                                        <div class="btn btn-sm btn-outline-secondary">More</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="preview-qt" id="sv_qt">QT-0000</div>
+                                                                <div class="preview-company logo-top">
+                                                                    <img src="https://pngdownload.io/wp-content/uploads/2023/12/Apple-Logo-Iconic-Tech-Brand-Symbol-PNG-Transparent-Representation-of-Innovation-and-Design-jpg.webp" alt="logo" class="preview-logo" />
+                                                                    <div class="preview-company-details">
+                                                                        <strong>SalesQueen Software Solutions</strong>
+                                                                        <div>Old No : 11 New No : 20, G.Floor, 2nd Cross Street, Indira Nagar Adyar</div>
+                                                                        <div>Chennai, 4035<br> India, 600020</div>
+                                                                        <div>GST Number: GST-33EKIPS2810E1ZD</div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <table class="preview-table" id="sv_items">
+                                                                    <thead>
+                                                                        <tr><th>#</th><th>Item</th><th>HSN/SAC</th><th>Qty</th><th>Rate</th><th>Tax</th><th>Amount</th></tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr><td>1</td><td id="sv_itemname">Volley Ball</td><td></td><td id="sv_qty">1</td><td id="sv_rate">100</td><td id="sv_tax"></td><td id="sv_amount">100</td></tr>
+                                                                    </tbody>
+                                                                </table>
+
+                                                                <div class="totals-box" id="sv_totals">
+                                                                    <div class="row"><span>Subtotal</span><strong id="sv_subtotal">100</strong></div>
+                                                                    <div class="row"><span>Total</span><strong id="sv_total">100</strong></div>
+                                                                </div>
+
+                                                                <div style="clear:both"></div>
+                                                                <div class="client-note"><strong>Client Note:</strong><div id="sv_note">11</div></div>
+                                                            </div>
+                                                            <div class="floating-actions" aria-hidden="true">
+                                                                <i class="fa fa-clone" title="Copy"></i>
+                                                                <i class="fa fa-edit" title="Edit"></i>
+                                                                <i class="bi bi-file-earmark-pdf" title="PDF"></i>
+                                                                <i class="bi bi-printer" title="Print"></i>
+                                                            </div>
+                                                        </div>
+                                                    </aside>
+                                                </div>
+                        
                     </div>
+                    
                 </div>
+                
             </div>
+
+        
+            
+        </div>
+    </div>
+    
+            
             <!----view toggle-->
             <div id="sec_col" class="col-md-7 exptblecol sec-column tablesideopener  mt-3 p-2">
                 <!-- <div class="row"> -->
@@ -451,6 +724,8 @@
                         </div>
 
 
+       
+
 
 
                         
@@ -510,58 +785,7 @@
                                     <button type="button" class="addbttn hrbtns bttn-mb-mrg-tp" id="task_view_modal"><i
                                             class="fa fa-plus"></i> NEW TASK</button>
                                 </div>
-                                <!-- <hr class="fileline inactiveBttn"> -->
-
-
-                                <!-- <div class="col-6">
-                    <div class="ctrfilter toggle-items">
-                        <button type="button" class=" contractfilter" style="width: 44px;"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
-                            data-bs-auto-close="outside">
-
-                            <i class="fa fa-filter isvg"  ></i>
-                        </button>
-
-                        <ul id="one"
-                            class="dropdown-menu dropdown-menu-right width300 rounded-3 overflow-scrolls"
-                            aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item task active" column="all" val="all" href="#">All</a></li>
-
-                            <li class="divider"></li>
-                            <li class="">
-                                <a class="dropdown-item task txt" column="status" val="1,s" href="#">In Progress</a>
-                                <a class="dropdown-item task txt" column="status" val="2,s" href="#">Not Started</a>
-                                <a class="dropdown-item task txt" column="status" val="3,s" href="#">Testing</a>
-                                <a class="dropdown-item task txt" column="status" val="4,s" href="#">Awaiting Feedback</a>
-                                <a class="dropdown-item task txt" column="status" val="5,s" href="#">Complete</a>
-                            </li>
-                            <li class="divider"></li>
-
-                            <li class="">
-                                <a class="dropdown-item task txt" column="created_on" val="1,c" href="#">Today's Tasks</a>
-                                <a class="dropdown-item task txt" column="created_on" val="2,c" href="#">Due Date Passed</a>
-                                <a class="dropdown-item task txt" column="created_on" val="3,c" href="#">Upcoming Tasks</a>
-                            </li>
-                            <li class="divider"></li>
-
-                            <li class="">
-                                <a class="dropdown-item task txt " column="search" val="1,se">Tasks assigned to me</a>
-                                <a class="dropdown-item task txt " column="search" val="2,se">Tasks i'm following</a>
-                                <a class="dropdown-item task txt " column="search" val="3,se">Not Assigned</a>
-                                <a class="dropdown-item task txt " column="search" val="4,se">Recurring</a>
-
-                            </li>
-                            <li class="divider"></li>
-
-                            <li class="">
-
-                                <a class="dropdown-item task txt " column="bill" val="1,b">Billable</a>
-                                <a class="dropdown-item task txt " column="bill" val="2,b">Billed</a>
-                                <a class="dropdown-item task txt " column="bill" val="0,b">Not Billed</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div> -->
+                                
                             </div>
 
 
@@ -769,14 +993,14 @@
             </div>
             
             <!-- Second Row -->
-            <div class="form-row">
-                <div class="form-group">
-                    <label class="required">Quotation Number #</label>
-                    <div class="quotation-number">
-                        <span class="prefix">QUOT-</span>
-                        <input type="text" class="form-control number-input" value="0120">
-                    </div>
+            <div class="form-grid">
+            <div class="form-group">
+                <label class="required">Quotation Number #</label>
+                <div class="quotation-number-wrapper">
+                    <span class="quotation-prefix">QUOT-</span>
+                    <input type="text" value="0120">
                 </div>
+            </div>
                 
                 <div class="form-group">
                     <label>Status</label>
@@ -940,8 +1164,236 @@
             <div class="button-container">
         <button class="btn-2 ">CLOSE</button>
         <button class="btn-1 ">SAVE</button>
-    </div>
+    </div><br><br>
+        
+    
+
+
+    <header class="page-breadcrumb-header">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li><i class="fas fa-home"></i></li>
+                <li>SALES</li>
+                <li>QUOTATION</li>
+                <li class="active">EDIT QUOTATION</li>
+            </ol>
+        </nav>
+    </header>
+
+    <div class="container" id="edition">
+        <h1 class="page-title">EDIT QUOTATION</h1>
+        
+        <form class="quotation-form">
+            <!-- First Row -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="required">Customer</label>
+                    <div class="input-with-button">
+                        <select class="form-control">
+                            <option>Select Customer</option>
+                        </select>
+                        <button type="button" class="add-button" style="background-color:rgb(37, 37, 156)">+</button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="required">Quotation Date</label>
+                    <input type="date" class="form-control" value="2025-10-28">
+                </div>
+                
+                <div class="form-row">
+    
+    <div class="address-section address-block">
+        <div class="address-header">
+            <i class="fa-solid fa-truck-fast address-icon"></i><br>
+            <label class="required" style="color:rgb(76, 76, 76)">Bill Address</label>
+        </div>
+        
+        <div class="address-field-row">
             
+            <input type="text" id="billCompany" class="underline-input" placeholder="Company">
+        </div><br>
+        <div class="address-field-row">
+            
+            <input type="text" id="billStreet" class="underline-input"placeholder="Street">
+        </div><br>
+        <div class="address-field-row">
+            
+            <input type="text" id="billCity" class="underline-input" placeholder="City">
+        </div><br>
+        <div class="address-field-row">
+            
+            <input type="text" id="billZipcode" class="underline-input" placeholder="Zipcode">
+        </div>
+    </div>
+
+    <div class="address-section address-block">
+        <div class="address-header"><br>
+            <label class="required" style="color:rgb(76, 76, 76)">Ship Address</label>
+        </div>
+
+        <div class="address-field-row">
+            
+            <input type="text" id="shipCompany" class="underline-input"placeholder="Company">
+        </div><br>
+        <div class="address-field-row">
+            
+            <input type="text" id="shipStreet" class="underline-input"placeholder="Street"  >
+        </div><br>
+        <div class="address-field-row">
+            
+            <input type="text" id="shipCity" class="underline-input"placeholder="City" >
+        </div><br>
+        <div class="address-field-row">
+            
+            <input type="text" id="shipZipcode" class="underline-input"placeholder="Zipcode" >
+        </div>
+    </div>
+</div>
+                
+                <div class="form-group">
+                    <label>Discount Type</label>
+                    <select class="form-control">
+                        <option>Select Discount Type</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Second Row -->
+            <div class="form-grid">
+            <div class="form-group">
+                <label class="required">Quotation Number #</label>
+                <div class="quotation-number-wrapper">
+                    <span class="quotation-prefix">QUOT-</span>
+                    <input type="text" value="0095">
+                </div>
+            </div>
+                
+                <div class="form-group">
+                    <label>Status</label>
+                    <select class="form-control">
+                        <option>Select Status</option>
+                    </select>
+                </div>
+                
+                <div class="form-group-spacer"></div>
+                
+                <div class="form-group">
+                    <label>Tags <i class="fa-solid fa-tag"></i></label>
+                    <select class="form-control">
+                        <option>Select Tags</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Third Row -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label>To Attend Of:</label>
+                    <input type="text" class="form-control" placeholder="Enter To attend of:">
+                </div>
+                
+                <div class="form-group">
+                    <label>s_number</label>
+                    <input type="text" class="form-control" placeholder="Enter s_number">
+                </div>
+                
+                <div class="form-group wide">
+                    <label>Email Address</label>
+                    <input type="email" class="form-control" placeholder="Enter Email Address">
+                </div>
+            </div>
+
+        <div class="advanced-options">
+            <span>Advanced Options</span>
+            <button>+</button>
+        </div><br><br>
+
+        <div class="search-section">
+            <div class="search-wrapper">
+                <input type="text" placeholder="Search Item...">
+            </div>
+            <button class="add-item-btn">+</button><br><br><br><br>
+        </div>
+
+        <table class="items-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Items</th>
+                    <th>HSN / SAC <span class="info-icon">?</span></th>
+                    <th>PCS</th>
+                    <th>Total Weight</th>
+                    <th>Thk</th>
+                    <th>Material Description</th>
+                    <th>Rate Kg Nos</th>
+                    <th>Qty (Unit)</th>
+                    <th>Unit Price (₹)</th>
+                    <th>Tax</th>
+                    <th>Net Amount (₹)</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: center;">1</td>
+                    <td>
+                        <div class="item-name-cell">
+                            <input type="text" class="item-name-input" placeholder="Item Name">
+                            <button class="upload-btn"><i class="fas fa-upload"></i></button>
+                            <textarea class="item-description" placeholder="Describe Here..."></textarea>
+                        </div>
+                    </td>
+                    <td>
+                        <input type="text" class="small-input" placeholder="HSN / SAC">
+                    </td>
+                    <td>
+                        <input type="text" class="small-input" placeholder="PCS">
+                    </td>
+                    <td>
+                        <input type="text" class="small-input" placeholder="Total Weight">
+                    </td>
+                    <td>
+                        <input type="text" class="small-input" placeholder="Thk">
+                    </td>
+                    <td>
+                        <input type="text" class="small-input" placeholder="Material description">
+                    </td>
+                    <td>
+                        <input type="text" class="small-input" placeholder="Rate kg nos">
+                    </td>
+                    <td>
+                        <input type="number" class="small-input" value="1" min="0">
+                        <select class="unit-select">
+                            <option>Nothing selected</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" class="small-input" placeholder="Rate">
+                    </td>
+                    <td>
+                        <select class="small-input">
+                            <option>No Tax</option>
+                        </select>
+                    </td>
+                    <td></td>
+                    <td style="text-align: center;">
+                        <button class="check-btn">✓</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        
+        <div class="button-container">
+        <button class="btn-2 ">CLOSE</button>
+        <button class="btn-1 ">SAVE</button>
+    </div>
+    </div>
+
+
+
+
         </form>
     </div> 
         <div class="card mt-3">
@@ -1004,7 +1456,7 @@
                             Edit <img src="edit.svg" alt="edit-icon">
                         </span></button>
                 </div>
-                <!-- <button class="striped-edit-btn"> Edit <img src="edit.svg" alt="edit-icon"></button> -->
+                
                 <div class="row">
                     <div class="col-md-12">
                         <!-- striped table -->
@@ -1080,20 +1532,14 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <!-- <div class="purchasegrp purch-drop"> -->
+                                
 
                                 <div class="purchasegrp purch-drop">
                                     <label for="unitname" class="purchaseinfo mb-1">Single select with title -
                                         submenu</label>
                                     <select id="accounttype" class="selectpicker form-control" data-live-search="true"
                                         name="account_type_id" placeholder=" Select Parent Account">
-                                        <!--<?php if (!empty($accountTypes)) : ?>
-                                                        <?php foreach ($accountTypes as $accountType) : ?>
-                                                          <option value="<?= $accountType->id ?>">
-                                                            <?= $accountType->name ?>
-                                                          </option>
-                                                        <?php endforeach ?>
-                                                      <?php endif ?>-->
+                                        
                                         <option value="36" disabled>ASSETS</option>
                                         <option value="38">Current Assets</option>
                                         <option value="41">Fixed Assets</option>
@@ -1174,7 +1620,7 @@
 
                         <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined"
                             rel="stylesheet" />
-                        <!-- Added overlay div -->
+                        
                         <div class="overlay" id="overlay">
                             <i class="fa-solid fa-cloud-arrow-up"></i>
                             Drop your files here...
@@ -1190,22 +1636,9 @@
                                 <h3 class="dynamic-message graycolor" >Drag & drop
                                     any
                                     file here</h3>
-                                <!-- <label class="label" style="margin-left: -300px;">
-                            
-                                                                                <span class="browse-files">
-                                                                                    <input type="file" class="default-file-input" />
-                                                                                    <span style="color: #6c757d;">or</span>
-                                                                                    <span class="browse-files-text">browse file</span>
-                                                                                    <span style="color: #6c757d;">from device</span>
-                                                                                </span>
-                                                                            </label> -->
+                                
                                 <label class="label">
-                                    <!-- or
-                                                                                <span class="browse-files">
-                                                                                    <input type="file" class="default-file-input" />
-                                                                                    <span class="browse-files-text">browse file</span>
-                                                                                    <span>from device</span>
-                                                                                </span> -->
+                                    
                                     <span class="browse-files">
                                         <input type="file" class="default-file-input">
                                         <span class="graycolor">or</span>
@@ -1237,7 +1670,7 @@
                             </div>
                         </div>
 
-                                  
+                        
                     </div>
 
                     <!-- drag & drop with progress bar -->
@@ -1795,20 +2228,7 @@
             </div>
         </div>
 
-        <!-- dropzone -->
-        <!-- <div class="">
-                    <div id="drop-zone">
-                        <img src="" alt="">
-                        <p class="dropfile">Drop file or click to upload</p>
-                        <label for="myfile" class="file-input-label">
-                            <input type="file" id="myfile">
-                        </label>
-                    </div>
-                    <div class="text-container">
-                        <div class="file-name"></div>
-                        <button class="delete-button btn-danger" id="deleteBtn">Delete</button>
-                    </div>
-                </div> -->
+        
         <br>
         <!-- span boxes -->
         <span class="undelsp mappedsp">Has been Mapped</span>
@@ -1855,7 +2275,7 @@
         <hr class="fileline vendcarline linehr">
 
         <h3 class=" mt-3">Accordian</h3>
-        <!-- <div class=" accordion custom-accordionwithicon-plus bclr" id="accordionWithplusicon"> -->
+        
         <div class=" accordion custom-accordionwithicon-plus bclr" id="accordionWithplusicon">
             <div class="accordion-item borchan newbroderfull ">
                 <h2 class="accordion-header" id="accordionwithplusExample1">
@@ -1887,80 +2307,14 @@
             </div>
         </div>
 
-        <!-- <div class="accordion-item borsin borrsin">
-                    <h2 class="accordion-header" id="accordionwithplusExample1">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#accor_plusExamplecollapse1" aria-expanded="false"
-                            aria-controls="accor_plusExamplecollapse1">
-                            General
-                        </button>
-                    </h2>
-                    <div id="accor_plusExamplecollapse1" class="accordion-collapse collapse"
-                        aria-labelledby="accordionwithplusExample1" data-bs-parent="#accordionWithplusicon">
-                        <div class="accordion-body">
-                            <div class="cnt-margin1">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <label class="purchaseinfo">Calendar Events Limit (Month and Week View)
-                                        </label>
-                                        <input type="number" name="calendar_event_limit"
-                                            value="<?= $cal->calendar_event_limit ?>"
-                                            class="form-control purchaseselects">
-                                    </div>
-                                </div>
-                                <hr class="fileline equalspaceforhr">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="purchasegrp purch-drop">
-                                            <label for="tags" class="purchaseinfo mb-1">Default View</label>
-                                            <select name="default_view" class="form-control selectpicker">
-                                                <option>Month</option>
-                                                <option>Week</option>
-                                                <option>Day</option>
-                                                <option>Agenda Week</option>
-                                                <option>Agenda Day</option>
-                                            </select>
-                                            <script>
-                                                $('select[name="default_view"]').selectpicker('val', '<?= $cal->default_view ?>')
-                                            </script>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr class="fileline equalspaceforhr">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="purchasegrp purch-drop">
-                                            <label for="tags" class="purchaseinfo mb-1">First Day</label>
-                                            <select name="first_day" class="form-control selectpicker">
-                                                <option>Sunday</option>
-                                                <option>Monday</option>
-                                                <option>Tuesday</option>
-                                                <option>Wednesday</option>
-                                                <option>Thursday</option>
-                                                <option>Friday</option>
-                                                <option>Saturday</option>
-                                            </select>
-
-                                            <script>
-                                                $('select[name="first_day"]').selectpicker('val', '<?= $cal->first_day ?>')
-                                            </script>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div> -->
+        
         <br>
 
         <hr class="fileline vendcarline linehr">
 
         <h3 class="mt-3">Horizontal Tabs</h3>
 
-        <!-- Tabs  -->
+        
 
         <div class="row m-2 gy-3">
             <div class="tblcontainer tabspace bg-white">
@@ -3382,7 +3736,7 @@
             document.getElementById('hlo').style.display = 'block'
         }
     </script>
-    <!-- for filter button -->
+    
     <script>
         $(document).ready(function ()
         {
@@ -3403,7 +3757,7 @@
         })
     </script>
 
-    <!-- attach file with progress bar -->
+    
 
     <script>
         const fileInputs = document.getElementById('file-input');
@@ -3444,25 +3798,7 @@
         }
     </script>
 
-    <!--Multiselect-->
-    <!-- <script>
-        const dropdowns = document.querySelectorAll('.multiselect');
-
-        dropdowns.forEach(dropdown => {
-            const inputBox = document.createElement('input');
-            inputBox.type = 'hidden';
-            inputBox.classList.add('selected-values');
-            name = dropdown.getAttribute('data-name');
-            inputBox.setAttribute("name", name);
-            dropdown.after(inputBox);
-
-            dropdown.addEventListener('change', () => {
-                const selectedOptions = Array.from(dropdown.selectedOptions).map(option => option.value);
-                inputBox.value = selectedOptions.join(', ');
-            });
-        });
-    </script> -->
-    <!-- append -->
+    
     <script>
         $(document).ready(function ()
         {
@@ -3531,7 +3867,7 @@
         })
     </script>
 
-    <!-- summernote -->
+    
     <script>
         $('#summernote').summernote({
             placeholder: '',
@@ -3540,7 +3876,7 @@
         });
     </script>
 
-    <!-- table dropdown -->
+    
     <script>
         var dropdownToggles = document.querySelectorAll("#stbutton");
 
@@ -3798,16 +4134,9 @@
   checkfirstlogin();
 </script>
 
-    <!-- color picker -->
+   
     <script>
-        // $('#colorPicker').on('input', function ()
-        // {
-        //     $('#color').val($(this).val());
-        // });
-        // $('#color').on('input', function ()
-        // {
-        //     $('#colorPicker').val($(this).val());
-        // });
+        
 
         $(document).ready(function ()
         {
@@ -3825,7 +4154,6 @@
 
     </script>
 
-    <!-- radio button accordian -->
     <script>
         $(document).ready(function ()
         {
@@ -3843,7 +4171,7 @@
 
     </script>
 
-    <!-- drag & drop with progress bar -->
+    
     <script>
         const dropZone = document.getElementById('drop-zone1');
         const fileInput2 = document.getElementById('file-input2');
@@ -3915,6 +4243,142 @@ function scrollToAddQuotation() {
     }
 }
 </script>
+
+<script>
+    (function () {
+        const side = document.getElementById('sideView');
+        const sideBody = document.getElementById('sideViewBody');
+        const viewContainer = document.getElementById('viewContainer');
+        const sideClose = document.getElementById('sideClose');
+
+        function adjustTables() {
+            setTimeout(() => {
+                try {
+                    if (window.jQuery && $.fn.dataTable) {
+                        // Find all DataTables and adjust their columns
+                        $('.dataTables_wrapper table.dataTable').each(function() {
+                            try {
+                                const dt = $(this).DataTable();
+                                if (dt && dt.columns) dt.columns.adjust();
+                            } catch(e) { /* ignore */ }
+                        });
+                    }
+                    // Trigger a global resize event for other components
+                    window.dispatchEvent(new Event('resize'));
+                } catch(e) { /* ignore */ }
+            }, 300); // Wait for transitions to complete
+        }
+
+        function openSide() {
+            if (!side) return;
+            side.classList.add('open');
+            if (viewContainer) viewContainer.classList.add('panel-open');
+            side.setAttribute('aria-hidden', 'false');
+            adjustTables();
+        }
+
+        function closeSide() {
+            if (!side) return;
+            side.classList.remove('open');
+            if (viewContainer) viewContainer.classList.remove('panel-open');
+            side.setAttribute('aria-hidden', 'true');
+            adjustTables();
+        }
+
+        function populateSideFromRow(tr) {
+            if (!tr) return;
+            const cells = tr.querySelectorAll('td');
+            const data = {
+                customer: cells[0] ? cells[0].innerText.trim() : '',
+                quotationId: cells[1] ? cells[1].innerText.trim() : '',
+                subTotal: cells[2] ? cells[2].innerText.trim() : '',
+                tax: cells[3] ? cells[3].innerText.trim() : '',
+                total: cells[4] ? cells[4].innerText.trim() : '',
+                date: cells[5] ? cells[5].innerText.trim() : '',
+                expiry: cells[6] ? cells[6].innerText.trim() : '',
+                tags: cells[7] ? cells[7].innerText.trim() : ''
+            };
+
+            // helper: set text if element exists
+            const setText = (id, val) => { const el = document.getElementById(id); if (el) el.innerText = val ?? ''; };
+
+            setText('sv_qt', data.quotationId || 'Quotation');
+            // use customer name as item for demo when no item data exists
+            const custName = data.customer.split('\n')[0] || data.customer;
+            setText('sv_itemname', custName || 'Item');
+            setText('sv_qty', '1');
+            setText('sv_rate', data.subTotal || '0');
+            setText('sv_tax', data.tax || '0');
+            setText('sv_amount', data.total || data.subTotal || '0');
+            setText('sv_subtotal', data.subTotal || data.total || '0');
+            setText('sv_total', data.total || data.subTotal || '0');
+            setText('sv_note', data.tags || '—');
+
+            // reveal the panel
+            openSide();
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        // Attach click handlers to all current and future view buttons
+        function bindViewButtons() {
+            document.querySelectorAll('.icon-view').forEach(btn => {
+                // avoid adding duplicate listeners
+                if (btn.__sideBound) return;
+                btn.__sideBound = true;
+                btn.addEventListener('click', (ev) => {
+                    // allow existing onclicks to run; run ours asynchronously
+                    setTimeout(() => {
+                        const tr = ev.target.closest ? ev.target.closest('tr') : findAncestor(ev.target, 'tr');
+                        populateSideFromRow(tr);
+                        openSide();
+                    }, 0);
+                });
+            });
+        }
+
+        function findAncestor(el, tag) {
+            while (el && el.parentNode) {
+                el = el.parentNode;
+                if (el && el.tagName && el.tagName.toLowerCase() === tag) return el;
+            }
+            return null;
+        }
+
+        // close button
+        if (sideClose) sideClose.addEventListener('click', closeSide);
+
+        // global Esc
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSide(); });
+        // simple tab handling inside the side panel
+        document.querySelectorAll('.side-tab').forEach(tab => {
+            tab.addEventListener('click', (ev) => {
+                document.querySelectorAll('.side-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                // placeholder: could switch .side-content children by data-tab
+            });
+        });
+
+        // init
+        bindViewButtons();
+
+        // if rows are added dynamically later, re-run binding (basic mutation observer)
+        const table = document.getElementById('example');
+        if (table) {
+            const mo = new MutationObserver(() => bindViewButtons());
+            mo.observe(table, { childList: true, subtree: true });
+        }
+    })();
+</script>
+
 </body>
 
 </html>
